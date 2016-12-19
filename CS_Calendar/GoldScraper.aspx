@@ -1,7 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GoldScraper.aspx.cs" Inherits="CS_Calendar.GoldScraper" %>
 
 <style>
-    /* Visual studio does not like gradients inside of stylesheets, will have to add in html file */
+   
+  /* Visual studio does not like gradients inside of stylesheets, will have to add in html file */
 body{
   background: -moz-linear-gradient(270deg, rgba(26,82,118,1) 0%, rgba(0,128,128,1) 100%); /* ff3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(26,82,118,1)), color-stop(100%, rgba(0,128,128,1))); /* safari4+,chrome */
@@ -13,6 +14,7 @@ body{
   width:100%;
   margin: auto;
  }
+
 </style>
 
 <!DOCTYPE html>
@@ -36,7 +38,7 @@ body{
           <form class="loginform"  runat="server">
              <input type="text" id="inputUsername" runat="server" placeholder="Username"/>
              <input type="password" id="inputPassword" runat="server" placeholder="Password"/>
-             <asp:Button class="Button" ID="Button1" runat="server" Text="Login" OnClick="Button1_Click1"></asp:Button>
+             <asp:Button CssClass="Button" ID="Button1" runat="server" Text="Login" OnClick="Button1_Click1"></asp:Button>
              <p id="registertext">Not Registered? <a href="javascript:void(0)">Sign Up</a></p>
           </form>
       </div>
