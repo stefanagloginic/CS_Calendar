@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GoldScraper.aspx.cs" Inherits="CS_Calendar.GoldScraper" %>
 
-<style>
+<!--<style>
    
   /* Visual studio does not like gradients inside of stylesheets, will have to add in html file */
 body{
@@ -15,13 +15,15 @@ body{
   margin: auto;
  }
 
-</style>
+</style>-->
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link rel="stylesheet" type="text/css" href="CSS/main.css"/>
     <link rel="stylesheet" type="text/css" href="CSS/normalize.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="JavaScript/main.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta charset="utf-8"/>
     <title>CS Calander</title>
@@ -35,11 +37,19 @@ body{
       </div>
   </div>
       <div class ="form">
+          <form class="registerform" >
+              <input type="text" id="registerUsername" placeholder="Username" />
+              <input type="text" id="registerEmail" placeholder="Email" />
+              <input type="password" id="registerPassword" placeholder="Password" />
+              <input type="password" id="registerRetype" placeholder="Retype Password" />
+              <button class="Button" id="RegisterButton" type="button">Sign Up</button> 
+              <p class="message" id="logintext">Already Registered? <a href="javascript:;" onclick="animateForm()">Log In</a></p>
+          </form>
           <form class="loginform"  runat="server">
              <input type="text" id="inputUsername" runat="server" placeholder="Username"/>
              <input type="password" id="inputPassword" runat="server" placeholder="Password"/>
-             <asp:Button CssClass="Button" ID="Button1" runat="server" Text="Login" OnClick="Button1_Click1"></asp:Button>
-             <p id="registertext">Not Registered? <a href="javascript:void(0)">Sign Up</a></p>
+             <asp:Button CssClass="Button" ID="Button1" runat="server" Text="Login" OnClick="Button1_Click1" />
+             <p class="message" id="registertext">Not Registered? <a href="javascript:;" onclick="animateForm()">Sign Up</a></p>
           </form>
       </div>
     </body>
