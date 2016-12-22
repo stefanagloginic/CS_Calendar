@@ -29,28 +29,34 @@ body{
     <title>CS Calander</title>
 </head>
 <body>
-  <div class="header">
-      <div class="container">
-          <div class="logo">
-              <h1> <a href=#>Computer Science Calender</a></h1>  
-          </div>
-      </div>
-  </div>
-      <div class ="form">
-          <form class="registerform" >
-              <input type="text" id="registerUsername" placeholder="Username" />
-              <input type="text" id="registerEmail" placeholder="Email" />
-              <input type="password" id="registerPassword" placeholder="Password" />
-              <input type="password" id="registerRetype" placeholder="Retype Password" />
-              <button class="Button" id="RegisterButton" type="button">Sign Up</button> 
-              <p class="message" id="logintext">Already Registered? <a href="javascript:;" onclick="animateForm()">Log In</a></p>
-          </form>
-          <form class="loginform"  runat="server">
-             <input type="text" id="inputUsername" runat="server" placeholder="Username"/>
-             <input type="password" id="inputPassword" runat="server" placeholder="Password"/>
-             <asp:Button CssClass="Button" ID="Button1" runat="server" Text="Login" OnClick="Button1_Click1" />
-             <p class="message" id="registertext">Not Registered? <a href="javascript:;" onclick="animateForm()">Sign Up</a></p>
-          </form>
-      </div>
+    <div class="wrap"> <!--need wrap in order to force the footer to stick at the bottom -->
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <h1> <a href=#>Computer Science Calender</a></h1>  
+            </div>
+        </div>
+    </div>
+        <div class ="form">
+            <form class="registerform" >
+                <input type="text" id="registerUsername" placeholder="Username" />
+                <input type="text" id="registerEmail" placeholder="Email" />
+                <input type="password" id="registerPassword" placeholder="Password" />
+                <input type="password" id="registerRetype" placeholder="Retype Password" />
+                <button class="Button" id="RegisterButton" type="button">Sign Up</button> 
+                 <p class="message" id="logintext">Already Registered?<a href="javascript:;" onclick="animateForm()">Log In</a></p>
+            </form>
+            <form class="loginform"  runat="server">
+                <input type="text" id="inputUsername" runat="server" placeholder="Username"/>
+                <input type="password" id="inputPassword" runat="server" placeholder="Password"/>
+                <asp:Button CssClass="Button" ID="Button1" runat="server" Text="Login" OnClick="Button1_Click1" />
+                 <p class="message" id="registertext">Not Registered?<a href="javascript:;" onclick="animateForm()">Sign Up</a></p>
+             </form>
+        </div>
+        </div> <!--end of wrap-->
+        
+        <div class="footer">
+            <span> &copy;Stefana Gloginic and Angel Rivera: All Rights Reserved </span>
+        </div>
     </body>
 </html>

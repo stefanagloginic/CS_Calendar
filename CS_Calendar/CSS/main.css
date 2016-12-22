@@ -18,6 +18,23 @@ html{
     width:auto;
     width:100%;
 }
+/*bc expanding wrapper to full height of viewport, the footer is pushed down. subtract the height of the footer
+    so its not pushed down extra by its height.
+*/
+.wrap {
+    min-height: calc(100vh-18px); 
+}
+
+.footer {
+    color: #fff;
+    font-size: 13px;
+    width: 100%;
+    text-shadow: 0px 1px 1px #93918b;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 2.5px 5px 0 rgba(0, 0, 0, 0.24);
+    text-align: center;
+    padding: 2em 0;
+}
+
 .form {
   background: #FFF;
   padding: 45px;
@@ -111,6 +128,7 @@ a{
 
 .form .Button:hover{
   background-color: #5fd358; 
+  transition: all 500ms ease;
 }
 
 .form .registerform {
