@@ -17,6 +17,7 @@ body{
 
 </style>-->
 
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -28,9 +29,9 @@ body{
     <meta charset="utf-8"/>
     <title>CS Calander</title>
 </head>
-<body>
-    <div class="wrap"> <!--need wrap in order to force the footer to stick at the bottom -->
-    <div class="header">
+  <body>
+    <div class="wrapper">
+      <div class="header">
         <div class="container">
             <div class="logo">
                 <h1> <a href=#>Computer Science Calender</a></h1>  
@@ -53,10 +54,11 @@ body{
                  <p class="message" id="registertext">Not Registered?<a href="javascript:;" onclick="animateForm()">Sign Up</a></p>
              </form>
         </div>
-        </div> <!--end of wrap-->
-        
-        <div class="footer">
-            <span> &copy;Stefana Gloginic and Angel Rivera: All Rights Reserved </span>
-        </div>
-    </body>
+      <div class="push"></div>
+      
+    </div>
+    <div class="footer">
+       <span> &copy;Stefana Gloginic and Angel Rivera: All Rights Reserved </span>
+    </div>
+  </body>
 </html>
