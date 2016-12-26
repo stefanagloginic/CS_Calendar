@@ -27,19 +27,19 @@ body{
     <script src="JavaScript/main.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta charset="utf-8"/>
-    <title>CS Calander</title>
+    <title>CS Calandar</title>
 </head>
   <body>
     <div class="wrapper">
       <div class="header">
         <div class="container">
             <div class="logo">
-                <h1> <a href=#>Computer Science Calender</a></h1>  
+                <h1> <a href=#>Computer Science Calendar</a></h1>  
             </div>
         </div>
     </div>
         <div class ="form">
-            <form class="registerform" >
+            <form class="registerform" onsubmit="return validateFieldsRegister();">
                 <input type="text" id="registerUsername" placeholder="Username" />
                 <input type="text" id="registerEmail" placeholder="Email" />
                 <input type="password" id="registerPassword" placeholder="Password" />
@@ -47,7 +47,7 @@ body{
                 <button class="Button" id="RegisterButton" type="button">Sign Up</button> 
                  <p class="message" id="logintext">Already Registered?<a href="javascript:;" onclick="animateForm()">Log In</a></p>
             </form>
-            <form class="loginform"  runat="server">
+            <form class="loginform"  runat="server" onsubmit="return validateFieldsLogin();">
                 <input type="text" id="inputUsername" runat="server" placeholder="Username"/>
                 <input type="password" id="inputPassword" runat="server" placeholder="Password"/>
                 <asp:Button CssClass="Button" ID="Button1" runat="server" Text="Login" OnClick="Button1_Click1" />

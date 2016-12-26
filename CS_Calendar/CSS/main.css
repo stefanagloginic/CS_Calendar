@@ -21,7 +21,7 @@ html{
   padding: 55px;
   max-width: 30%;
   text-align: center;
-  margin: 10% auto 0 auto;
+  margin: 7% auto 0 auto;
   font-family: "Roboto", cursive,'Changa One', 'sans-serif';
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   z-index: 1;
@@ -145,3 +145,4 @@ a{
       display: table-cell;
       vertical-align: middle;
   }
+
