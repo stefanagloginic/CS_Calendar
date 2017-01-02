@@ -30,11 +30,21 @@ body{
     <title>CS Calandar</title>
 </head>
   <body>
+    <!-- represents the screen which pops up-->
+    <div id="loader-wrapper">
+    <div id="loader"></div>
+ 
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+ 
+    </div>
+
+    <div class ="mainlayout">
     <div class="wrapper">
       <div class="header">
         <div class="container">
             <div class="logo">
-                <h1> <a href=#>Computer Science Calendar</a></h1>  
+                <h1> <a href= "#">Computer Science Calendar</a></h1>  
             </div>
         </div>
     </div>
@@ -60,5 +70,6 @@ body{
     <div class="footer">
        <span> &copy;Stefana Gloginic and Angel Rivera: All Rights Reserved </span>
     </div>
+        </div>
   </body>
 </html>

@@ -1,4 +1,10 @@
-﻿function animateForm() {
+﻿function main() {
+    $('.form').animate({ height: "toggle", opacity: "toggle" }, "slow"); // makes the form appear after dom has loaded.
+}
+
+$(document).ready(main); //makes sure dom is loaded before running function main();
+
+function animateForm() {
     $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
 }
 

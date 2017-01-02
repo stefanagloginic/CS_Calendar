@@ -1,27 +1,44 @@
-﻿using System;
-using OpenQA.Selenium;
-using System.Collections.Generic;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.PhantomJS;
+using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Linq;
+using System.Net.Mime;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace CS_Calendar
 {
-    public partial class GoldScraper : System.Web.UI.Page
+    public partial class PageLoader : System.Web.UI.Page
     {
-        public static string BaseUrl = "https://my.sa.ucsb.edu/gold/login.aspx";
-        public static string regInfoUrl = "https://my.sa.ucsb.edu/gold/RegistrationInfo.aspx";
-        public const int TimeOut = 30;
+        private string user;
+        private string pass;
+        private static string BaseUrl = "https://my.sa.ucsb.edu/gold/login.aspx";
+        private List<string> registrationDates;
+        private ReadOnlyCollection<IWebElement> courses; //will evntually become a list of courses
+
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //if (Session["user"] != null)
+            {
+                //user = Session["user"].ToString();
+                //pass = Session["pass"].ToString();
+                //GetUserInfo();
+            }
+            
 
         }
 
-        public void Login()
+        private void GetUserInfo()
         {
-            string user = inputUsername.Value.ToString();
-            string pass = inputPassword.Value.ToString();
-
+            Response.Write("start");
             var driver = new PhantomJSDriver(); //headless browser to navigate to gold
             driver.Navigate().GoToUrl(BaseUrl);
 
@@ -34,17 +51,6 @@ namespace CS_Calendar
             var signinBtn = driver.FindElementById("pageContent_loginButton"); //grab reference to  login btn on gold login
             signinBtn.Click();
 
-            if(driver.Url == BaseUrl)
-            {
-                //make an error message appear login was unsuccesful 
-                //http://stackoverflow.com/questions/5731224/calling-javascript-function-from-codebehind
-                return;
-            } else {
-                //login was succesfull display a message "Login was Successfull"
-                //Now getting schedule
-            }
-            
-            //getting registration info
             var registrationImg = driver.FindElementById("ctl09_image"); //grab reference to registration for navigation 
             registrationImg.Click();
 
@@ -52,42 +58,23 @@ namespace CS_Calendar
             IWebElement elem2 = driver.FindElementById("pageContent_PassTwoLabel");
             IWebElement elem3 = driver.FindElementById("pageContent_PassThreeLabel");
 
-            List<string> registrationDates = new List<string>();
+            registrationDates = new List<string>();
 
             registrationDates.Add(elem1.Text);
             registrationDates.Add(elem2.Text);
             registrationDates.Add(elem3.Text);
-
             //getting schedule page
             var scheduleImg = driver.FindElementById("ctl05_image");
             scheduleImg.Click();
             //grab course table
             IWebElement scheduleTable = driver.FindElementById("pageContent_CourseList");
             //grab all table elements with scheduleTable with width ="560" and align="center"
-            ReadOnlyCollection<IWebElement> list = scheduleTable.FindElements(By.CssSelector("table[width='560'][align='center']"));
-            foreach(var element in list)
-            {
-                Response.Write(element.Text);
-            }
+            courses = scheduleTable.FindElements(By.CssSelector("table[width='560'][align='center']"));
             //convert each webelement into a course object
-            
-            driver.Quit();
-            
-        }
 
-        protected void Button1_Click1(object sender, EventArgs e)
-        {
-            Login();
-        }
-     
-        /// <summary>
-        /// Helper function that parses a student's schedule from an html table.
-        /// </summary>
-        /// <param name="table">table that holds student's schedule.</param>
-        /// <returns></returns>
-        protected void GetSchedule(IWebElement table)
-        {
-            
+            driver.Quit();
+            Response.Write("done");
+
         }
     }
 }
