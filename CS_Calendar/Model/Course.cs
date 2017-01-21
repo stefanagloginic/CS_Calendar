@@ -6,16 +6,22 @@ using System.Web;
 
 namespace CS_Calendar.Model
 {
-    public class Course
+    public class Course : ScheduleElement
     {
+        string instructor { get; }
+        Course section { get; }
+        Exam final { get; set; }
+        SortedSet<MeetingTime> meetingTimes { get; set; }
+        List<Exam> midterms { get; set; }
 
-        string courseName;
-        string day;
-        string time;
 
-        public Course(IWebElement info)
+        public Course(string instructor, Course section, Exam final, List<Exam> midterms)
         {
-            
+            this.instructor = instructor;
+            this.section = section;
+            this.final = final;
+            this.midterms = midterms;
         }
+
     }
 }
