@@ -67,13 +67,13 @@ namespace CS_Calendar
             IWebElement scheduleTable = driver.FindElementById("pageContent_CourseList");
             //grab all table elements with scheduleTable with width ="560" and align="center"
             ReadOnlyCollection<IWebElement> list = scheduleTable.FindElements(By.CssSelector("table[width='560'][align='center']"));
-            foreach (var element in list)
+            /*foreach (var element in list)
             {
                 foreach(var time in Course.courseParser(element).meetingTimes)
                     Response.Write(time + " ");
                 Response.Write("</br>");
 
-            }
+            }*/
             //convert each webelement into a course object
 
             //grab final exam information from Gold
@@ -81,7 +81,8 @@ namespace CS_Calendar
             ReadOnlyCollection<IWebElement> finalElements = finalsTable.FindElements(By.CssSelector("table[width='560'][align='left']"));
             foreach(var element in finalElements)
             {
-                Response.Write(element.Text + "</br>");
+                Exam exams = Exam.createExam(element);
+                Response.Write(exams + "</br>");
             }
             driver.Quit();
 

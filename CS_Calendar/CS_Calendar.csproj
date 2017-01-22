@@ -139,6 +139,7 @@
       <DependentUpon>GoldScraper.aspx</DependentUpon>
     </Compile>
     <Compile Include="Model\Course.cs" />
+    <Compile Include="Model\Date.cs" />
     <Compile Include="Model\Exam.cs" />
     <Compile Include="Model\MeetingTime.cs" />
     <Compile Include="Model\Schedule.cs" />

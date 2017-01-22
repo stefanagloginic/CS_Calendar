@@ -56,7 +56,7 @@ body{
                 <input type="password" id="registerPassword" placeholder="Password" />
                 <input type="password" id="registerRetype" placeholder="Retype Password" />
                 <button class="Button" id="RegisterButton" type="button">Sign Up</button> 
-                 <p class="message" id="logintext">Already Registered?<a href="javascript:;" onclick="animateFormReg()">Log In</a></p>
+                 <p class="message" id="logintext">Already Registered? <a href="javascript:;" onclick="animateFormReg()"> Log In</a></p>
             </form>
                 </div>
             <div id="loginWrap" class ="formWrappers">
@@ -64,7 +64,7 @@ body{
                 <input type="text" id="inputUsername" runat="server" placeholder="Username"/>
                 <input type="password" id="inputPassword" runat="server" placeholder="Password"/>
                 <asp:Button CssClass="Button" ID="Button1" runat="server" Text="Login" OnClick="Button1_Click1" />
-                 <p class="message" id="registertext">Not Registered?<a href="javascript:;" onclick="animateForm()">Sign Up</a></p>
+                 <p class="message" id="registertext">Not Registered?<a href="javascript:;" onclick="animateForm()"> Sign Up</a></p>
              </form>
              </div>
         </div>
