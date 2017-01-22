@@ -69,7 +69,10 @@ namespace CS_Calendar
             ReadOnlyCollection<IWebElement> list = scheduleTable.FindElements(By.CssSelector("table[width='560'][align='center']"));
             foreach (var element in list)
             {
-                Response.Write(Course.courseParser(element).instructor);
+                foreach(var time in Course.courseParser(element).meetingTimes)
+                    Response.Write(time + " ");
+                Response.Write("</br>");
+
             }
             //convert each webelement into a course object
 
