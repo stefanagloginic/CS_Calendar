@@ -1,11 +1,21 @@
 ﻿function main() {
-    $('.form').animate({ height: "toggle", opacity: "toggle" }, "slow"); // makes the form appear after dom has loaded.
+    $('#loginWrap').animate({ height: "toggle", opacity: "toggle" }, "slow"); // makes the form appear after dom has loaded.
 }
 
 $(document).ready(main); //makes sure dom is loaded before running function main();
 
 function animateForm() {
-    $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
+    $('#loginWrap').animate({ height: "toggle", opacity: "toggle" }, "slow");
+    $('#loginWrap').promise().done(function () {
+        $('#registerWrap').animate({ height: "toggle", opacity: "toggle" }, "slow");
+    });
+}
+
+function animateFormReg() {
+    $('#registerWrap').animate({ height: "toggle", opacity: "toggle" }, "slow");
+    $('#registerWrap').promise().done(function () {
+        $('#loginWrap').animate({ height: "toggle", opacity: "toggle" }, "slow");
+    });
 }
 
 function validateFieldsRegister() {
