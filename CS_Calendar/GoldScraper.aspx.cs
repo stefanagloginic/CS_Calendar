@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 using System.Collections.Generic;
 using OpenQA.Selenium.PhantomJS;
 using System.Collections.ObjectModel;
-
+using CS_Calendar.Model;
 namespace CS_Calendar
 {
     public partial class GoldScraper : System.Web.UI.Page
@@ -34,16 +34,18 @@ namespace CS_Calendar
             var signinBtn = driver.FindElementById("pageContent_loginButton"); //grab reference to  login btn on gold login
             signinBtn.Click();
 
-            if(driver.Url == BaseUrl)
+            if (driver.Url == BaseUrl)
             {
                 //make an error message appear login was unsuccesful 
                 //http://stackoverflow.com/questions/5731224/calling-javascript-function-from-codebehind
                 return;
-            } else {
+            }
+            else
+            {
                 //login was succesfull display a message "Login was Successfull"
                 //Now getting schedule
             }
-            
+
             //getting registration info
             var registrationImg = driver.FindElementById("ctl09_image"); //grab reference to registration for navigation 
             registrationImg.Click();
@@ -65,29 +67,20 @@ namespace CS_Calendar
             IWebElement scheduleTable = driver.FindElementById("pageContent_CourseList");
             //grab all table elements with scheduleTable with width ="560" and align="center"
             ReadOnlyCollection<IWebElement> list = scheduleTable.FindElements(By.CssSelector("table[width='560'][align='center']"));
-            foreach(var element in list)
+            foreach (var element in list)
             {
-                Response.Write(element.Text);
+                Response.Write(Course.courseParser(element).instructor);
             }
             //convert each webelement into a course object
-            
+
             driver.Quit();
-            
+
         }
 
         protected void Button1_Click1(object sender, EventArgs e)
         {
             Login();
         }
-     
-        /// <summary>
-        /// Helper function that parses a student's schedule from an html table.
-        /// </summary>
-        /// <param name="table">table that holds student's schedule.</param>
-        /// <returns></returns>
-        protected void GetSchedule(IWebElement table)
-        {
-            
-        }
+
     }
 }

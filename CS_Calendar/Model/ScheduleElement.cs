@@ -7,15 +7,20 @@ namespace CS_Calendar.Model
 {
     public abstract class ScheduleElement
     {
-        private string eventName { get; set; } 
-        private DateTime startDate { get; set; }
-        private DateTime endDate { get; set; }
-        private string description { get; set; }
+        public string eventName { get; set; } 
+        public DateTime startDate { get; set; }
+        public DateTime endDate { get; set; }
+        public string description { get; set; }
 
         public ScheduleElement(string eventName, DateTime startDate, DateTime endDate, string description) {
             this.eventName = eventName;
             this.startDate = startDate;
             this.endDate = endDate;
+            this.description = description;
+        }
+        public ScheduleElement(string eventName, string description)
+        {
+            this.eventName = eventName;
             this.description = description;
         }
 
