@@ -126,6 +126,8 @@
     </Content>
     <Content Include="CSS\main.css" />
     <None Include="Resources\ucsb.jpg" />
+    <Content Include="Resources\background.jpg" />
+    <Content Include="Resources\CSLogo.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

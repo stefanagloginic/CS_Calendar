@@ -76,6 +76,13 @@ namespace CS_Calendar
             }
             //convert each webelement into a course object
 
+            //grab final exam information from Gold
+            IWebElement finalsTable = driver.FindElementById("pageContent_FinalsGrid");
+            ReadOnlyCollection<IWebElement> finalElements = finalsTable.FindElements(By.CssSelector("table[width='560'][align='left']"));
+            foreach(var element in finalElements)
+            {
+                Response.Write(element.Text + "</br>");
+            }
             driver.Quit();
 
         }

@@ -4,7 +4,7 @@
 
 
 html{
-   background: url(../Resources/ucsb.jpg) no-repeat center center fixed; 
+   background: url(../Resources/background.jpg) no-repeat center center fixed; 
    background-size: cover;
 }
 .body{
@@ -16,16 +16,47 @@ html{
     so its not pushed down extra by its height.
 */
 
+
+
 .form {
-  background: #FFF;
-  padding: 55px;
-  max-width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  margin: 7% auto 0 auto;
+  margin: 5% auto;
   font-family: "Roboto", cursive,'Changa One', 'sans-serif';
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   z-index: 1;
-  display:none;
+}
+
+.formWrap{
+    display: none;
+}
+
+form{
+    margin: 0 auto;
+    background-color: rgba(72, 72, 72, 0.7);
+    padding: 30px;
+    min-height: 50vh;
+    min-width: 55vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    border-radius: 15px;
+}
+
+#registerUsername, #inputUsername{
+    background-image: url(https://skincareayurveda.com/photos/kayakalp-global-featured-image-1468303717.png);
+    background-size: 8%;
+    background-position: 2% center;
+    background-repeat: no-repeat;
+}
+
+#inputPassword, #registerPassword, #registerRetype {
+    background-image: url(http://zhuansunxt.com/2016/04/22/implementing-synchronization1/lock.png);
+    background-size: 8%;
+    background-position: 2% center;
+    background-repeat: no-repeat;
 }
 
 .form input{
@@ -34,12 +65,12 @@ html{
   width: 100%;
   display: block;
   box-sizing: border-box;
-  padding: 10px;
+  padding: 25px;
   text-align: center;
   margin: 5px auto 0 auto;
-  border-radius: 2.5%;
-  background-color: #EBEDEF;
-  margin-bottom: 7px; 
+  border-radius: 10px;
+  background-color: #FFF;
+  margin-bottom: 20px; 
   height: 30px;
 }
 
@@ -48,25 +79,27 @@ html{
 }
 
 .form input:hover{
-    background-color: #b8e9fc;  
+    background: #939393; 
+    color: #FFF; 
+    border: 1px solid #000;
+    box-shadow: inset 4px 6px 10px -4px rgba(0, 0, 0, 0.3), 0 1px 1px -1px rgba(255, 255, 255, 0.3);
   }
 
-.logo h1{
-  /*color: #fff7dd;*/
-  color: white;
-  text-align: center;
-  font-family: 'Aref Ruqaa', serif;
-  letter-spacing: 2px;
-  padding-bottom: 5px;
-  z-index: 1;
-  text-shadow: 3px .5px 2px rgb(0, 0, 0);
-  margin: 0;
+#ucsbLogo{
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 10vh;
+  margin-left: 2vh;
+}
+
+.logo {
+    width: 50%;
 }
 
 .header{
   background-color: rgba(76,175,80,0.8);
   width: 100%;
-  padding: 10px 0;
+  padding: 20px 0;
   text-shadow: 0px 1px 1px #93918b;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 2.5px 5px 0 rgba(0, 0, 0, 0.24);
   z-index: 1;
@@ -96,27 +129,39 @@ a{
 }
 
 .form .Button{
+  border: 1px solid #000;
+  border-top: 1px solid rgba(255,255,255,0.8);
   width: 100%;
-  height: 30px;
+  height: 45px;
   text-transform: uppercase;
-  outline: 0;
-  border: 0;
-  background-color: #4CAF50;
   color: white;
   border-radius: 15px;
   font-size: 10px;
   font-weight: bold;
   letter-spacing: 1px;
+  margin: 0px;
+  align-content: center;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#338000+0,61c626+50,338000+100 */
+    background: #338000; /* Old browsers */
+    background: -moz-linear-gradient(left,  #338000 0%, #61c626 50%, #338000 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #338000 0%,#61c626 50%,#338000 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #338000 0%,#61c626 50%,#338000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#338000', endColorstr='#338000',GradientType=1 ); /* IE6-9 */
+    -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(255, 255, 255, 0.2)));
 }
 
 .form .Button:hover{
-  background-color: #5fd358; 
-  transition: all 500ms ease;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#53d000+0,7fdc4a+50,53d000+100 */
+background: #53d000; /* Old browsers */
+background: -moz-linear-gradient(left, #53d000 0%, #7fdc4a 50%, #53d000 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, #53d000 0%,#7fdc4a 50%,#53d000 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, #53d000 0%,#7fdc4a 50%,#53d000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#53d000', endColorstr='#53d000',GradientType=1 ); /* IE6-9 */
+-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(255, 255, 255, 0.2)));
 }
 
-.form .registerform {
+.formWrappers {
     display: none;
-    margin:auto;
 }
 
 
@@ -131,7 +176,7 @@ a{
   }
   
   .footer,.push{
-    height: 50px 
+    height: 2vh;
   }
 
   .footer{
